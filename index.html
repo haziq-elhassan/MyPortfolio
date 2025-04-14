@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Haziq Hassan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header> 
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="image-container">
+    <img src="C:\Users\User\Desktop\MyPortfolio\Images\cover.jpg" alt="Background" id="fadeImage">
+    <div class="image-text" id="scrollText">I am Haziq Hassan</div>>
+  </div>
+
+  <section id="dp">
+    <img src="C:\Users\User\Desktop\MyPortfolio\Images\HaziqHassanPic.jpg" alt="Dp" class="dp">
+  </section>
+
+  <section id="home">
+    <h2>About Me</h2>
+    <p>Hello! I'm Haziq Hassan, a passionate and detail-oriented Data Analyst with a strong foundation in analyzing and interpreting complex datasets to drive actionable insights. My expertise lies in using tools like Excel, Python, and Tableau to uncover trends, optimize processes, and support data-driven decision-making. 
+</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Sales Dashboard</h3>
+        <p>Built a dynamic sales dashboard using Power BI to track key metrics.</p>
+      </div>
+      <div class="project-card">
+        <h3>Customer Segmentation</h3>
+        <p>Performed clustering analysis on customer data using Python and scikit-learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="resume.pdf" target="_blank" class="btn">Download Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at <a href="mailto:haziq@example.com">haziqhassan23@outlook.com</a></p>
+    <div class="socials">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/haziqhassan98/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Haziq Hassan</p>
+  </footer>
+
+  <script>
+    const text = document.getElementById('scrollText');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const triggerPoint = 25; // adjust this if needed
+
+      if (scrollY > triggerPoint) {
+        text.classList.add('show');
+      }
+    });
+
+    const image = document.getElementById('fadeImage');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const fadeStart = 0;
+      const fadeEnd = window.innerHeight / 1;
+
+      let opacity = 1;
+
+      if (scrollY <= fadeStart) {
+        opacity = 1;
+      } else if (scrollY <= fadeEnd) {
+        opacity = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+      } else {
+        opacity = 0;
+      }
+
+      image.style.opacity = opacity;
+    });
+  </script>
+</body>
+</html>
