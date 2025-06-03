@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Haziq Hassan</title>
+  <link rel="icon" href="./Images/h.ico" type="tab_icon"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header> 
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="projects">
+    <h2>Sentiment Analysis on Play Store</h2>
+    <div class="project-card">
+        <a href="portfolio.html">Go Back</a>
+
+        <p>The sentiment classification task was approached using three supervised learning algorithms: Multinomial Naive Bayes, Support Vector Machine (SVM), and Logistic Regression. Each model was trained and evaluated using two different feature extraction techniques: Bag-of-Words (BoW) and Term Frequency–Inverse Document Frequency (TF-IDF). The objective was to classify Google Play Store reviews as either positive or negative, following the removal of neutral class entries.</p>
+
+        <p>For the Bag-of-Words representation, all three models were fitted using the training data split. The Naive Bayes classifier demonstrated robust performance, benefiting from its probabilistic nature and suitability for text classification tasks with word count features. The SVM model, using a linear kernel and default settings (gamma='scale'), also yielded competitive results, likely due to its capability to find a hyperplane that maximally separates the sentiment classes. Logistic Regression was configured with the lbfgs solver and a significantly high iteration limit (max_iter=10000) to ensure convergence, especially in light of earlier convergence warnings. Accuracy, F1-score, precision, and recall were computed for each model, with macro-averaging applied to address any potential class imbalance and ensure equal weight across classes.</p>
+        
+        <p>In the second phase of evaluation, the models were retrained using TF-IDF features, which consider the relative importance of terms across the corpus rather than their raw frequency. This transformation often leads to improved performance in text classification tasks, particularly where common but uninformative words may skew predictions. Each of the three classifiers—Naive Bayes, SVM, and Logistic Regression—was again evaluated using the same set of metrics. Notably, the TF-IDF transformation generally contributed to a more nuanced feature set, which, depending on the model, had varying impacts on classification performance. For instance, Naive Bayes may benefit less from TF-IDF compared to BoW due to its assumption of feature independence and reliance on raw frequency.</p>
+        
+        <p>Using the BoW representation, the SVM model achieved the highest performance across all metrics, with an accuracy of approximately 86.05%, an F1 score of 0.860, precision of 0.860, and recall of 0.861. These results suggest that SVM was particularly effective at capturing the distinguishing features of sentiment polarity in the raw frequency-based feature space. The Naïve Bayes classifier followed closely, with an accuracy of 85.58%, and similarly high scores in F1, precision, and recall, indicating that this model also handled the BoW representation well—likely due to its probabilistic assumptions which are suitable for word count data. In contrast, Logistic Regression underperformed relative to the other two models, achieving only 79.06% accuracy, along with lower but still consistent F1, precision, and recall scores near 0.79.</p>
+        
+        <p>When switching to the TF-IDF feature representation, which incorporates the importance of words relative to their document frequency, performance improved slightly for some models. SVM again outperformed all others, achieving the highest accuracy of 87.77%, F1 score of 0.877, precision of 0.877, and recall of 0.878. This reinforces the model’s robustness and ability to generalize well when provided with more informative and weighted feature sets. Naïve Bayes also benefitted modestly from TF-IDF, improving upon its BoW results with an accuracy of 85.86% and consistently strong performance across the remaining metrics. However, Logistic Regression saw a slight decrease in performance with TF-IDF, registering an accuracy of 78.06% and F1 and recall scores below 0.78, suggesting that even with more nuanced feature weighting, the model struggled to effectively capture the sentiment patterns in the dataset.</p>
+        
+        <p>In summary, SVM consistently delivered the best performance under both feature extraction techniques, making it the most suitable classifier for this sentiment analysis task. Naïve Bayes also showed competitive results, especially when computational simplicity is a priority. Logistic Regression, while generally a strong baseline model, lagged behind in this particular context. These findings highlight the importance of both feature engineering and model selection in optimizing text classification tasks, and suggest that SVM with TF-IDF provides the most accurate and reliable results for sentiment analysis of app reviews in this dataset.</p>
+      <a href="https://github.com/haziq-elhassan/NPL_PlayStoreReview" target="_blank">See more</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Haziq Hassan</p>
+  </footer>
+</body>
+</html>
